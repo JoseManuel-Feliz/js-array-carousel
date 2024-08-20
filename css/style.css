@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Utils */
+.container {
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+.carousel {
+    width: calc(100% - 6.5vw);
+
+    position: relative;
+
+}
+
+.gallery {}
+
+img {
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    width: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.arrows {
+    position: absolute;
+    transform: translateY(-50% -50%);
+    top: 50%;
+    font-size: calc(1.5rem + 1.5vw);
+    cursor: pointer;
+}
+
+.arrows.left {
+    right: calc(100% + 1.5vw);
+    transform: translateX(100% 100%);
+}
+
+.arrows.right {
+    left: calc(100% + 1.5vw);
+    transform: translateX(100% 100%);
+}
+
+.arrows.right:hover {
+    animation: grow-bouncing-r ease-in 2s infinite;
+
+}
+
+@keyframes grow-bouncing-r {
+    0% {
+        transform: scale(1) translateX(0%);
+    }
+
+    50% {
+        transform: scale(1.3) translateX(30%);
+    }
+
+    100% {
+        transform: scale(1) translateX(0%);
+
+    }
+}
+
+
+.arrows.left:hover {
+    animation: grow-bouncing-l 2s ease-in infinite;
+}
+
+@keyframes grow-bouncing-l {
+    0% {
+        transform: scale(1) translateX(0%);
+    }
+
+    50% {
+        transform: scale(1.3) translateX(-30%);
+    }
+
+    100% {
+        transform: scale(1) translateX(0%);
+
+    }
+}
