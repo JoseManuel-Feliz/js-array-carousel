@@ -62,7 +62,13 @@ nextButton.addEventListener('click', function () {
     //5.b incremento del indice per poter dare la classe active al img succesiva.
     currentActiveImage++;
 
-    //5.c aggiungere la classe active all'image sucessiva.
+    /*5.c agginta condizione che impedisce al carousel 
+    di andare oltre e ritorna al img inprima posizione. (Ciclo infinito)*/
+    if (currentActiveImage === images.length) {
+        currentActiveImage = 0;
+    }
+
+    //5.d aggiungere la classe active all'image sucessiva.
     images[currentActiveImage].classList.add('active')
 
 })
@@ -78,7 +84,13 @@ prevButton.addEventListener('click', function () {
     //6.b incremento del indice per poter dare la classe active al img succesiva.
     currentActiveImage--;
 
-    //6.c aggiungere la classe active all'image sucessiva.
+    /*6.c agginta condizione che impedisce al carousel 
+    di andare oltre e ritorna al img inprima posizione. (Ciclo infinito)*/
+    if (currentActiveImage < 0) {
+        currentActiveImage = images.length - 1;
+    }
+
+    //6.d aggiungere la classe active all'image sucessiva.
     images[currentActiveImage].classList.add('active')
 
 })
