@@ -27,7 +27,8 @@ const sources = ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'im
 const galleryImgs = document.getElementById('gallery');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
-
+const carousel = document.getElementById('carousel');
+const thumbWrapper = document.createElement('div')
 /* fase di elaborazione */
 
 //3. Generero le img da inserire all'interno del DOM, con il loop For.
@@ -35,6 +36,7 @@ const nextButton = document.getElementById('next');
 for (let i = 0; i < sources.length; i++) {
     const src = sources[i];
     const img = document.createElement('img');
+    img.classList.add('col', sources[i])
 
     img.src = src;
     img.alt = `0${i + 1}.web`;
@@ -95,3 +97,20 @@ prevButton.addEventListener('click', function () {
 
 })
 
+/* BONUS 2 
+
+f/* or (let i = 0; i < sources.length; i++) {
+    const src = sources[i];
+    const img = document.createElement('img');
+
+    img.src = src;
+    img.alt = `0${i + 1}.web`;
+    /*  thumbWrapper.append(img);
+     carousel.appendChild(thumbWrapper) 
+
+
+
+thu     
+} */
+
+function (hkjhjk)
